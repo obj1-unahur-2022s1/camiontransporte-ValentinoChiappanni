@@ -1,5 +1,33 @@
 import cosas.*
 
 object camion {
-
+	const cosas = []
+	method cargar(unaCosa){
+		cosas.add(unaCosa)
+	}
+	method descargar(unaCosa){
+		cosas.remove(unaCosa)
+	}
+	method todoPesoPar(){
+		return cosas.all({c=>c.peso().even()})
+	}
+	method hayAlgunoQuePesa(peso){
+		return cosas.any({c=>c.peso()})
+	}
+	method elDeNivel(nivel){
+		return cosas.find({c=>c.nivelPeligrosidad()==nivel})
+	}
+	method pesoTotal(){
+		return cosas.sum({c=>c.peso()}) + self.pesoCamionVacio()
+	}
+	method pesoCamionVacio(){
+		return 1000
+	}
+	method excedidoDePeso(){
+		return self.pesoTotal()>2500
+	}
+	method objetosQueSuperanPeligrosidad(nivel){
+		return cosas.filter({c=>c.nivelPeligrosidad()>=nivel})
+	}
+	
 }
