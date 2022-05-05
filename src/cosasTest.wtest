@@ -45,7 +45,7 @@ describe "Contenedor"{
 		contenedor.agregarObjeto(paqueteLadrillos)
 		contenedor.agregarObjeto(arena)
 		contenedor.agregarObjeto(bumblebee)
-		assert.equals(620,contenedor.peso()) //10+10+500+100
+		assert.equals(920,contenedor.peso()) 
 	}
 	test "Peligrosidad de la arena, ladrillos y Bumblebee (auto)"{	
 	contenedor.agregarObjeto(paqueteLadrillos)

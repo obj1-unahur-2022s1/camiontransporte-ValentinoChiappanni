@@ -12,10 +12,10 @@ object camion {
 		return cosas.all({c=>c.peso().even()})
 	}
 	method hayAlgunoQuePesa(peso){
-		return cosas.any({c=>c.peso()})
+		return cosas.any({c=>c.peso()==peso})
 	}
 	method elDeNivel(nivel){
-		return cosas.find({c=>c.nivelPeligrosidad()==nivel})
+		return cosas.find({c=>c.peligrosidad()==nivel})
 	}
 	method pesoTotal(){
 		return cosas.sum({c=>c.peso()}) + self.pesoCamionVacio()
@@ -27,10 +27,10 @@ object camion {
 		return self.pesoTotal()>2500
 	}
 	method objetosQueSuperanPeligrosidad(nivel){
-		return cosas.filter({c=>c.nivelPeligrosidad()>=nivel})
+		return cosas.filter({c=>c.peligrosidad()>=nivel})
 	}
 	method objetosMasPeligrososQue(cosa){
-		return self.objetosQueSuperanPeligrosidad(cosa.nivelPeligrosidad())
+		return self.objetosQueSuperanPeligrosidad(cosa.peligrosidad())
 	}
 	method puedeCircularEnRuta(nivelMaximoPeligrosidad){
 		return self.excedidoDePeso() and self.objetosQueSuperanPeligrosidad(nivelMaximoPeligrosidad).isEmpty()

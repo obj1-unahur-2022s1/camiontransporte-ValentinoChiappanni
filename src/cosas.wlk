@@ -5,7 +5,7 @@ object knightRider {
 
 object bumblebee {
 	var esAuto = true
-	method peso() = 500
+	method peso() = 800
 	method peligrosidad() = if(esAuto){15}else{30} 
 	method transformar(){esAuto = !esAuto}
 }
