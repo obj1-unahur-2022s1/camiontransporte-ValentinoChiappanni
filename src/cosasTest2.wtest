@@ -9,34 +9,34 @@ describe "Paquete de ladrillos"{
 		assert.equals(1,paqueteLadrillos.totalBultos())
 	}
 	test"Peso y bulto del ladrillo, 30 ladrillo pesan 60K"{
-	paqueteLadrillos.cantLadrillos(30)
-	assert.equals(60,paqueteLadrillos.peso())
-	assert.equals(1,paqueteLadrillos.totalBultos())
+		paqueteLadrillos.cantLadrillos(30)
+		assert.equals(60,paqueteLadrillos.peso())
+		assert.equals(1,paqueteLadrillos.totalBultos())
 	}
 	test"Peso y bulto del ladrillo, 120 ladrillo pesan 240K"{
-	paqueteLadrillos.cantLadrillos(120)
-	assert.equals(240,paqueteLadrillos.peso())
-	assert.equals(2,paqueteLadrillos.totalBultos())
+		paqueteLadrillos.cantLadrillos(120)
+		assert.equals(240,paqueteLadrillos.peso())
+		assert.equals(2,paqueteLadrillos.totalBultos())
 	}
 	test"Peso y bulto del ladrillo, 250 ladrillo pesan 500K"{
-	paqueteLadrillos.cantLadrillos(250)
-	assert.equals(500,paqueteLadrillos.peso())
-	assert.equals(2,paqueteLadrillos.totalBultos())
+		paqueteLadrillos.cantLadrillos(250)
+		assert.equals(500,paqueteLadrillos.peso())
+		assert.equals(2,paqueteLadrillos.totalBultos())
 	}
 	test"Peso y bulto del ladrillo, 400 ladrillo pesan 800K"{
-	paqueteLadrillos.cantLadrillos(400)
-	assert.equals(800,paqueteLadrillos.peso())
-	assert.equals(3,paqueteLadrillos.totalBultos())
+		paqueteLadrillos.cantLadrillos(400)
+		assert.equals(800,paqueteLadrillos.peso())
+		assert.equals(3,paqueteLadrillos.totalBultos())
 	}
 }
 
 describe "batería antiaérea"{
 	test"Totalbulto de la batería antiaérea con misiles"{
-	assert.equals(2,bateriaAntiarea.totalBultos())
+		assert.equals(2,bateriaAntiarea.totalBultos())
 	}
 	test"Totalbulto de la batería antiaérea sin misiles"{
-	bateriaAntiarea.cambiarEstadoDeMisiles()
-	assert.equals(1,bateriaAntiarea.totalBultos())
+		bateriaAntiarea.cambiarEstadoDeMisiles()
+		assert.equals(1,bateriaAntiarea.totalBultos())
 	}
 }
 

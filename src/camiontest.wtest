@@ -2,17 +2,23 @@ import camion.*
 import cosas.*
 
 describe "Test camion:"{
-	test("Cargar al camion, con bumblebee (robot), arena 150k, bateria antiaerea 
-		(con misiles) y embalaje de seguridad, con paquete de 80 ladrillos."){
-		
+		method iniciar(){
+		/* 
+		Carga en el camion a bumblebee (robot), arena 150k, bateria antiaerea 
+		(con misiles) y embalaje de seguridad, con paquete de 80 ladrillos.
+		*/
 		camion.cargar(bumblebee)
-		bumblebee.transformar()
-		camion.cargar(arena)
 		arena.peso(150)
+		camion.cargar(arena)
 		camion.cargar(bateriaAntiarea)
 		camion.cargar(embalajeSeguridad)
 		embalajeSeguridad.cosa(paqueteLadrillos)
 		paqueteLadrillos.cantLadrillos(80)
+	}
+	
+	test"Cargar al camion, con bumblebee (robot), arena 150k, bateria antiaerea 
+		(con misiles) y embalaje de seguridad, con paquete de 80 ladrillos."{
+		self.iniciar()
 		assert.that(camion.todoPesoPar())
 		assert.that(camion.hayAlgunoQuePesa(150))
 		assert.equals(arena, camion.elDeNivel(1))

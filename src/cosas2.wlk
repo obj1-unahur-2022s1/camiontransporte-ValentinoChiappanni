@@ -25,7 +25,6 @@ object paqueteLadrillos{
 	method consecuencias(){cantLadrillos += 12}
 }
 
-
 object arena {
 	var property peso = 0
 	method peligrosidad()= 1

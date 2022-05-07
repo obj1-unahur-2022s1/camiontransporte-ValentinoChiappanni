@@ -16,7 +16,6 @@ object paqueteLadrillos{
 	method peligrosidad()= 2
 }
 
-
 object arena {
 	var property peso = 0
 	method peligrosidad()= 1

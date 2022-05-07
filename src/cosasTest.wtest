@@ -8,8 +8,8 @@ describe "Paquete de ladrillos"{
 		assert.equals(40,paqueteLadrillos.peso())
 	}
 	test"Peso del ladrillo, 30 ladrillo pesan 60K"{
-	paqueteLadrillos.cantLadrillos(30)
-	assert.equals(60,paqueteLadrillos.peso())
+		paqueteLadrillos.cantLadrillos(30)
+		assert.equals(60,paqueteLadrillos.peso())
 	}
 }
 
@@ -18,15 +18,15 @@ describe "batería antiaérea"{
 		assert.equals(300,bateriaAntiarea.peso())
 	}
 	test"Peso de la batería antiaérea sin misiles"{
-	bateriaAntiarea.cambiarEstadoDeMisiles()
-	assert.equals(200,bateriaAntiarea.peso())
+		bateriaAntiarea.cambiarEstadoDeMisiles()
+		assert.equals(200,bateriaAntiarea.peso())
 	}
 	test"Peligrosidad de la batería antiaérea con misiles"{
-	assert.equals(100,bateriaAntiarea.peligrosidad())
+		assert.equals(100,bateriaAntiarea.peligrosidad())
 	}
 	test"Peligrosidad de la batería antiaérea sin misiles"{
-	bateriaAntiarea.cambiarEstadoDeMisiles()
-	assert.equals(0,bateriaAntiarea.peligrosidad())
+		bateriaAntiarea.cambiarEstadoDeMisiles()
+		assert.equals(0,bateriaAntiarea.peligrosidad())
 	}
 }
 
@@ -48,12 +48,12 @@ describe "Contenedor"{
 		assert.equals(920,contenedor.peso()) 
 	}
 	test "Peligrosidad de la arena, ladrillos y Bumblebee (auto)"{	
-	contenedor.agregarObjeto(paqueteLadrillos)
-	contenedor.agregarObjeto(arena)
-	contenedor.agregarObjeto(bumblebee)
-	assert.equals(15,contenedor.peligrosidad()) 
+		contenedor.agregarObjeto(paqueteLadrillos)
+		contenedor.agregarObjeto(arena)
+		contenedor.agregarObjeto(bumblebee)
+		assert.equals(15,contenedor.peligrosidad()) 
 	}
 	test "Peligrosidad vacio"{	
-	assert.equals(0,contenedor.peligrosidad()) 
+		assert.equals(0,contenedor.peligrosidad()) 
 	}
 }
