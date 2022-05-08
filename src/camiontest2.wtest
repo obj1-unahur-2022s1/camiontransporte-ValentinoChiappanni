@@ -2,7 +2,7 @@ import camion2.*
 import cosas2.*
 
 describe "Test camion:"{
-	method iniciar(){
+		method initialize(){
 		/* 
 		Carga en el camion a bumblebee (robot), arena 150k, bateria antiaerea 
 		(con misiles) y embalaje de seguridad, con paquete de 80 ladrillos.
@@ -12,14 +12,20 @@ describe "Test camion:"{
 		camion.cargar(arena)
 		camion.cargar(bateriaAntiarea)
 		camion.cargar(embalajeSeguridad)
-		embalajeSeguridad.cosa(paqueteLadrillos)
 		paqueteLadrillos.cantLadrillos(80)
-	}
-	test "Carga a bumblebee, arena, bateriaAntiarea, embalajeSeguridad y paqueteLadrillos"{
-		self.iniciar()
-		assert.notThat(bumblebee.esAuto())
-		assert.equals(170, arena.peso())
-		assert.that(bateriaAntiarea.tieneMisiles())
-		assert.equals(80, paqueteLadrillos.cantLadrillos())
-	}
+		embalajeSeguridad.cosa(paqueteLadrillos)
+		}
+		
+		test"Bumblebee es un robot"{
+			assert.notThat(bumblebee.esAuto())
+		}
+		test "La arena tiene un peso de 170kg"{
+			assert.equals(170, arena.peso())
+		}
+		test "La bateria antiaerea esta cargada"{
+			assert.that(bateriaAntiarea.tieneMisiles())
+		}
+		test "La cantidad de ladrillos es 80"{
+			assert.equals(80, paqueteLadrillos.cantLadrillos())
+		}
 }
